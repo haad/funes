@@ -1,3 +1,7 @@
+# https://openresty.org/download/openresty-1.21.4.2.tar.gz
+# 
+openresty_version=1.21.4.2
+
 default: install
 
 dev-build:
@@ -28,11 +32,11 @@ build: extract
 
 extract: download
 	mkdir -p extract
-	tar -xzvf download/openresty-1.17.8.2.tar.gz -C extract
+	tar -xzvf download/openresty-$(openresty_version).tar.gz -C extract
 
 download:
 	mkdir -p download
-	wget -P download https://openresty.org/download/openresty-1.17.8.2.tar.gz
+	wget -P download https://openresty.org/download/openresty-$(openresty_version).tar.gz
 
 clean: clean-build clean-download clean-extract clean-package
 
